@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+:root {
+  --text-color-light: #fff;
+  --bg-color-dark: #274472;
+  --main-color: #41729f;
+  --text-color-dark: #000;
+  --bg-color-light: #c3e0e5;
+  --hover-color: rgba(88, 133, 175, 0.678);
+}
+
+/* Blue Style*/
+/* :root {
+    --text-color-light: #fff;
+    --text-color-dark: #000;
+    --bg-color-light: #fff;
+    --bg-color-dark: #274472;
+    --main-color: rgb(88, 133, 175);
+    --hover-color: #c3e0e5;
+  } */
+
+/*Green Style*/
+/* :root {
+    --text-color-light: #fff;
+    --text-color-dark: #000;
+    --bg-color-light: #fef2e7;
+    --bg-color-dark: #073c2c;
+    --main-color: #4db178;
+    --hover-color: #b4b9b9;
+  } */
+
+/*Pink Style*/
+/* :root {
+  --text-color-light: #fff;
+  --text-color-dark: #000;
+  --bg-color-light: #c79fa7;
+  --bg-color-dark: #287686;
+  --main-color: #695e93;
+  --hover-color: #dfd1a9;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/*Page Container*/
+#page-container {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  margin: 10px;
+}
+
+#steps-container {
+  /* line-height: 50px; */
+  font-size: 25px;
+  margin: 5%;
+  margin-left: 20%;
+  margin-top: 10%;
+  height: 100%;
+}
+
+#btnContainer {
+  margin-left: 70px;
+}
+
+.btn.finalGradeBtn {
+  margin-left: 150px;
+  width: 180px;
+}
+
+#done-btn-5P,
+#done-btn-4P,
+#done-btn-3P {
+  margin-left: 150px;
+  width: 180px;
+}
+
+.step2 {
+  display: none;
+}
+
+/* Circles Container*/
+#circlesSection {
+  display: grid;
+  grid-gap: 30px;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  align-content: center;
+  margin: 5%;
+}
+
+/* Page Title*/
+h1 {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-light);
+  text-align: center;
+  padding: 25px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  word-spacing: 10px;
+  margin: 0;
+}
+
+/* The Circles*/
+.module {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 140px;
+  height: 140px;
+  text-align: center;
+  border: 2px solid var(--bg-color-dark);
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+.module:hover {
+  background-color: var(--hover-color);
+  color: var(--text-color-light);
+}
+
+.myBtn.active {
+  background-color: var(--bg-color-dark);
+}
+
+/* Top and Bottom Circles*/
+#module-a,
+#module-c,
+#module-c3P,
+#module-e,
+#module-e4P,
+#module-g {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+/* The circles in the middle*/
+#points-5,
+#points-4,
+#points-3 {
+  font-size: 30px;
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-light);
+  cursor: default;
+}
+
+.hide {
+  display: none;
+}
+
+.btn {
+  border-radius: 5px;
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-light);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  margin: 20px 15px;
+  margin-bottom: 35px;
+  width: fit-content;
+  font-size: 20px;
+}
+
+button.active {
+  background-color: var(--main-color);
+  color: var(--text-color-light);
+}
+
+.btn:hover {
+  background-color: var(--hover-color);
+  color: var(--text-color-light);
+}
+
+/* The Background*/
+.grade-box {
+  display: none;
+  position: absolute; /*so it stays in place*/
+  z-index: 1;
+  padding-top: 50px;
+  left: 10;
+  top: 50px;
+  right: 120px;
+  height: fit-content;
+  width: fit-content;
+  overflow: none;
+  border-radius: 10px;
+}
+
+.grade-box.active {
+  display: block;
+}
+
+/* The box Content */
+.grade-box-content {
+  background-color: var(--main-color);
+  color: var(--text-color-light);
+  padding: 10px;
+  width: 22%;
+}
+
+p {
+  margin: 6px 15px;
+  padding: 5px;
+}
+
+input {
+  overflow: none;
+  margin: 2px auto;
+  padding: 2px;
+  border-radius: 2px;
+  border: none;
+  width: 100%;
+}
+
+input::placeholder {
+  font-size: 10px;
+  padding: 2px;
+  width: fit-content;
+}
+
+/* calculator buttons*/
+.cal {
+  margin: 15px auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: var(--bg-color-dark);
+  background-color: var(--bg-color-light);
+  letter-spacing: 1px;
+}
+
+.cal:hover {
+  background-color: var(--hover-color);
+  color: var(--text-color-light);
+}
+
+/*The close button*/
+.close {
+  color: var(--text-color-light);
+  float: right;
+  font-size: 40px;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--hover-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.finalGradeDesign {
+  border: 2px solid var(--bg-color-dark);
+  background-color: yellow;
+  text-align: center;
+  padding: 15px;
+  color: var(--bg-color-dark);
+  margin: 30px auto;
+}
