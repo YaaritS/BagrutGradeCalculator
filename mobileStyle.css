@@ -1,19 +1,21 @@
 @media (max-device-width: 1200px) {
   #page-container {
-    grid-template-columns: none;
-    grid-template-rows: repeat(2, auto);
-    margin: 1px;
+    grid-template-columns: unset;
+    grid-template-rows: repeat(2, 50%);
+    height: 100vh;
   }
 
   #steps-container {
     font-size: 20px;
-    margin: 1%;
-    margin-left: 5%;
-    margin-top: 5%;
+    height: 50%;
+    margin: 5%;
   }
 
   #btnContainer {
-    margin-left: 0;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
   }
 
   .btn.finalGradeBtn {
@@ -21,6 +23,7 @@
     width: 50%;
     font-size: 17px;
     max-width: 200px;
+    margin-bottom: 10px;
   }
 
   #done-btn-5P,
@@ -28,66 +31,69 @@
   #done-btn-3P {
     margin-left: 20%;
     width: 50%;
-    font-size: 16px;
+    font-size: 17px;
     max-width: 200px;
   }
 
-  #circlesSection {
-    grid-gap: 10px;
+  #circle-progress-section {
+    height: 50%;
+    margin: 0;
+    margin-left: 5%;
+  }
+
+  #three-pointers,
+  #four-pointers,
+  #five-pointers {
+    grid-gap: 5px;
   }
 
   h1 {
     padding: 15px;
     letter-spacing: normal;
     word-spacing: normal;
-    margin: 0;
     font-size: 20px;
   }
 
   .module {
-    width: 90px;
-    height: 90px;
-    line-height: 15px;
+    line-height: 20px;
     font-size: 14px;
+    width: 100px;
+    height: 100px;
+    max-width: 140px;
+    max-height: 140px;
+    padding: 5px;
   }
 
   #points-5,
   #points-4,
   #points-3 {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .btn {
-    border-radius: 5px;
-    padding: 15px 5px;
-    margin: 20px 5px;
-    margin-bottom: 15px;
-    width: 22%;
+    /* margin-bottom: 10px; */
     max-width: 120px;
     font-size: 14px;
   }
 
   .grade-box {
-    left: 5%;
-    top: 15%;
-    right: 5%;
-    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
     border-radius: 5px;
   }
 
   .grade-box-content {
     padding: 5%;
-    width: 75%;
     margin: 5%;
   }
 
   p {
     margin: 5px 10px;
-    padding: 10px;
   }
 
   input {
-    margin: 6px auto;
+    margin: 2px auto;
     padding: 2px;
     border-radius: 0.2px;
     width: 100%;
@@ -95,12 +101,11 @@
 
   input::placeholder {
     font-size: 10px;
-    padding: 5px;
-    width: fit-content;
   }
 
-  .cal {
-    margin: 20px auto;
+  .cal,
+  .edit,
+  .next {
     padding: 10px 15px;
     border-radius: 3px;
   }
@@ -113,6 +118,22 @@
     padding: 10px;
     margin: 10px auto;
     width: 80%;
-    max-width: 800px;
+  }
+
+  #progress {
+    width: 230px;
+    height: 230px;
+    max-width: 400px;
+    max-height: 400px;
+    padding: 5px;
+  }
+
+  #progress:after {
+    margin: 3%;
+    height: 60%;
+    width: 60%;
+    border-radius: 50%;
+    padding: 17%;
+    z-index: -100;
   }
 }

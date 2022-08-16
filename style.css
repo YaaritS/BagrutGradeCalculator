@@ -1,11 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@100;400;700&display=swap');
 :root {
   --text-color-light: #fff;
   --bg-color-dark: #274472;
   --main-color: #41729f;
-  --text-color-dark: #000;
+  --text-color-dark: #212121;
   --bg-color-light: #c3e0e5;
   --hover-color: rgba(88, 133, 175, 0.678);
+  --line-border-fill: #9c27b0;
+  --line-border-empty: #bdbdbd;
 }
 
 /* Blue Style*/
@@ -45,21 +47,20 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Mulish', sans-serif;
 }
 
 /*Page Container*/
 #page-container {
   display: grid;
   grid-template-columns: repeat(2, 50%);
-  margin: 10px;
 }
 
 #steps-container {
   /* line-height: 50px; */
   font-size: 25px;
   margin: 5%;
-  margin-left: 20%;
+  margin-left: 15%;
   margin-top: 10%;
   height: 100%;
 }
@@ -78,6 +79,7 @@ body {
 #done-btn-3P {
   margin-left: 150px;
   width: 180px;
+  font-family: inherit;
 }
 
 .step2 {
@@ -85,14 +87,27 @@ body {
 }
 
 /* Circles Container*/
+#circle-progress-section {
+  font-size: 25px;
+  margin: 5%;
+  margin-top: 10%;
+  margin-left: 20%;
+  height: 100%;
+}
+
 #circlesSection {
-  display: grid;
-  grid-gap: 30px;
+  position: relative;
   justify-content: center;
   align-items: center;
-  overflow: visible;
   align-content: center;
-  margin: 5%;
+}
+
+#three-pointers,
+#four-pointers,
+#five-pointers {
+  display: grid;
+  position: absolute;
+  grid-gap: 30px;
 }
 
 /* Page Title*/
@@ -112,25 +127,28 @@ h1 {
   display: grid;
   align-items: center;
   justify-content: center;
-  position: relative;
+  background-color: #fff;
   width: 140px;
   height: 140px;
   text-align: center;
-  border: 2px solid var(--bg-color-dark);
+  border: 4px solid #bdbdbd;
   border-radius: 50%;
   cursor: pointer;
   line-height: 30px;
   font-size: 20px;
+  padding: 15px;
 }
 
-.module:hover {
-  background-color: var(--hover-color);
-  color: var(--text-color-light);
+.active-circle {
+  border: 4px solid var(--line-border-fill);
+  background-color: rgb(156, 39, 185);
+  color: #fff;
+  transition: 0.8s ease;
 }
 
-.myBtn.active {
+/* .myBtn.active {
   background-color: var(--bg-color-dark);
-}
+} */
 
 /* Top and Bottom Circles*/
 #module-a,
@@ -143,6 +161,14 @@ h1 {
   grid-column-end: 4;
 }
 
+#module-b,
+#module-d,
+#module-f {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+}
+
 /* The circles in the middle*/
 #points-5,
 #points-4,
@@ -151,6 +177,7 @@ h1 {
   background-color: var(--bg-color-dark);
   color: var(--text-color-light);
   cursor: default;
+  border: none;
 }
 
 .hide {
@@ -166,19 +193,27 @@ h1 {
   cursor: pointer;
   padding: 10px 15px;
   margin: 20px 15px;
-  margin-bottom: 35px;
-  width: fit-content;
+  /* margin-bottom: 35px; */
+  width: 28%;
   font-size: 20px;
+  font-family: inherit;
 }
 
 button.active {
   background-color: var(--main-color);
   color: var(--text-color-light);
+  transform: scale(0.97);
 }
 
 .btn:hover {
   background-color: var(--hover-color);
   color: var(--text-color-light);
+}
+
+.btn:disabled,
+.edit:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
 }
 
 /* The Background*/
@@ -189,9 +224,9 @@ button.active {
   padding-top: 50px;
   left: 10;
   top: 50px;
-  right: 120px;
-  height: fit-content;
-  width: fit-content;
+  right: 50px;
+  height: 100%;
+  width: 100%;
   overflow: none;
   border-radius: 10px;
 }
@@ -205,7 +240,10 @@ button.active {
   background-color: var(--main-color);
   color: var(--text-color-light);
   padding: 10px;
-  width: 22%;
+  width: fit-content;
+  height: fit-content;
+  font-size: 16px;
+  z-index: 2;
 }
 
 p {
@@ -226,21 +264,28 @@ input::placeholder {
   font-size: 10px;
   padding: 2px;
   width: fit-content;
+  font-weight: 700;
 }
 
 /* calculator buttons*/
-.cal {
-  margin: 15px auto;
-  padding: 10px 20px;
+.cal,
+.edit,
+.next {
+  width: 80%;
+  margin: 15px;
+  padding: 10px 15px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
   color: var(--bg-color-dark);
   background-color: var(--bg-color-light);
   letter-spacing: 1px;
+  font-family: inherit;
 }
 
-.cal:hover {
+.cal:hover,
+.edit:hover,
+.next:hover {
   background-color: var(--hover-color);
   color: var(--text-color-light);
 }
@@ -249,7 +294,7 @@ input::placeholder {
 .close {
   color: var(--text-color-light);
   float: right;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .close:hover,
@@ -266,4 +311,43 @@ input::placeholder {
   padding: 15px;
   color: var(--bg-color-dark);
   margin: 30px auto;
+}
+
+/*Progress Circle*/
+
+#progress-container {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+#progress {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  content: '';
+  width: 400px;
+  height: 400px;
+  background: conic-gradient(#bdbdbd 360deg, #9c27b0 360deg);
+  border-radius: 50%;
+  text-align: center;
+  margin-top: 40px;
+  margin-left: 35px;
+  padding: 15px;
+  z-index: -10;
+}
+
+#progress:after {
+  margin: 2%;
+  content: '';
+  display: grid;
+  position: absolute;
+  background-color: #fff;
+  height: 350px;
+  width: 350px;
+  border-radius: 50%;
+  padding: 20px;
+  z-index: -100;
 }

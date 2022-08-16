@@ -10,519 +10,705 @@
   </head>
   <body>
     <div class="container">
-
       <header class="header">
         <h1>THE ENGLISH BAGRUT CALCULATOR</h1>
       </header>
 
-    <div id="page-container">
-      <div id="steps-container">
-        <b>Step 1:</b> select the number of points<br>
-        <div id="btnContainer">
-          <button
-          id="btn3"
-          class="btn"
-          type="button"
-          onclick="removeClass(points3), addClass(points4), addClass(points5), removeHideClass(addGrades), removeDisplayClass(doneBtn3P)">3 points</button>
-        <button
-          id="btn4"
-          class="btn"
-          type="button"
-          onclick="removeClass(points4), addClass(points3), addClass(points5), removeHideClass(addGrades), removeDisplayClass(doneBtn4P)">4 points</button>
-        <button
-          class="btn"
-          type="button" onclick="removeClass(points5), addClass(points4), addClass(points3), removeHideClass(addGrades), removeDisplayClass(doneBtn5P)">5 points</button>
+      <div id="page-container">
+        <div id="steps-container">
+          <b>Step 1:</b> select the number of points<br />
+          <div id="btnContainer">
+            <button
+              id="btn3"
+              class="btn"
+              type="button"
+              onclick="removeClass(points3), addClass(points4), addClass(points5), removeHideClass(addGrades), removeDisplayClass(doneBtn3P), removeHideClass(progressContainer)"
+            >
+              3 points
+            </button>
+            <button
+              id="btn4"
+              class="btn"
+              type="button"
+              onclick="removeClass(points4), addClass(points3), addClass(points5), removeHideClass(addGrades), removeDisplayClass(doneBtn4P), removeHideClass(progressContainer)"
+            >
+              4 points
+            </button>
+            <button
+            id="btn5"
+              class="btn"
+              type="button"
+              onclick="removeClass(points5), addClass(points4), addClass(points3), removeHideClass(addGrades), removeDisplayClass(doneBtn5P), removeHideClass(progressContainer)"
+            >
+              5 points
+            </button>
+          </div>
+          <br />
+          <div id="add-grades" class="hide">
+            <b>Step 2:</b> click on the
+            <span style="color: #9c27b0; font-weight: 700">purple </span>circle
+            to add your grades ➡
+          </div>
+          <button id="done-btn-5P" class="btn step2 hide">I'm Done!</button>
+          <button id="done-btn-4P" class="btn step2 hide">I'm Done!</button>
+          <button id="done-btn-3P" class="btn step2 hide">I'm Done!</button>
+
+          <div id="final-grade-3P" class="hide">
+            <b>Step 3:</b> calculate your final grade 🤞
+          </div>
+          <button id="final-grade-btn-3P" class="btn hide finalGradeBtn">
+            Final Grade
+          </button>
+          <div id="final-grade-4P" class="hide">
+            <b>Step 3:</b> calculate your final grade 🤞
+          </div>
+          <button id="final-grade-btn-4P" class="btn hide finalGradeBtn">
+            Final Grade
+          </button>
+          <div id="final-grade-5P" class="hide">
+            <b>Step 3:</b> calculate your final grade 🤞
+          </div>
+          <button id="final-grade-btn-5P" class="btn hide finalGradeBtn">
+            Final Grade
+          </button>
         </div>
-     <br>
-        <div id="add-grades" class="hide"><b>Step 2:</b> click on the circles to add your grades ➡ </div>
-          <button id="done-btn-5P" class="btn step2">I'm Done!</button>
-          <button id="done-btn-4P" class="btn step2">I'm Done!</button>
-          <button id="done-btn-3P" class="btn step2">I'm Done!</button>
-         
-          <div id="final-grade-3P" class="hide"><b>Step 3:</b> calculate your final grade 🤞</div>
-        <button id="final-grade-btn-3P" class="btn hide finalGradeBtn">Final Grade</button>
-          <div id="final-grade-4P" class="hide"><b>Step 3:</b> calculate your final grade 🤞</div>
-        <button id="final-grade-btn-4P" class="btn hide finalGradeBtn">Final Grade</button>
-          <div id="final-grade-5P" class="hide"><b>Step 3:</b> calculate your final grade 🤞</div>
-        <button id="final-grade-btn-5P" class="btn hide finalGradeBtn">Final Grade</button>
+
+      <div id="circle-progress-section">
+          <div id="progress-container" class="hide">
+            <div id="progress" class="progress"></div>
+          </div>
+       
+        <div id="circlesSection" >
+            <!--3 Pointers-->
+              <div id="three-pointers" class="hide">
+              <div
+                id="module-a"
+                class="module hide points3 myBtn circle active-circle"
+              >
+                Module A
+              </div>
+              <div class="grade-box grade-box-content">
+                <span class="close">&times;</span><br />
+                <form id="formA" action="/action_page.php">
+                  <p id="moduleAFinal">
+                    Module A for 3 pointers
+                    <input
+                      type="number"
+                      id="moduleAHagasha30"
+                      placeholder="Enter your Hagasha Grade or estimation of it."
+                      name="moduleFinal"
+                    />
+                    <input
+                      type="number"
+                      id="moduleABagrut70"
+                      placeholder="Enter your Bagrut Grade or estimation of it."
+                      name="moduleFinal"
+                    />
+                    <button type="button" id="moduleACalculate" class="cal">
+                      Calculate
+                    </button>
+                  </p>
+                  <button type="button" id="btn-next-A" class="next hide">
+                    Next
+                  </button>
+                  <button type="button" id="btn-edit-A" class="edit hide">
+                    Edit
+                  </button>
+                </form>
+              </div>
+
+              <div id="oral-bagrut" class="module hide points3 circle myBtn">
+                Oral Bagrut
+              </div>
+              <div class="grade-box grade-box-content">
+                <span class="close">&times;</span>
+                <form action="/action_page.php">
+                  <p id="oralBagrutFinal">
+                    This oral bagrut grade is 100% iternal
+                    <input
+                      type="number"
+                      id="oralHagasha30"
+                      placeholder="Enter your Hagasha Grade or estimation of it."
+                      name="oralBagrutFinal"
+                    />
+                    <input
+                      type="number"
+                      id="oralBagrut70"
+                      placeholder="Enter your Bagrut Grade or estimation of it."
+                      name="oralBagrutFinal"
+                    />
+                    <button type="button" id="oralBagrutCalculate" class="cal">
+                      Calculate
+                    </button>
+                  </p>
+                  <button type="button" id="btn-next-OB" class="next hide">
+                    Next
+                  </button>
+                  <button type="button" id="btn-edit-OB" class="edit hide">
+                    Edit
+                  </button>
+                </form>
+              </div>
+
+              <div id="points-3" class="module hide points3">3 points</div>
+
+              <div id="module-c3P" class="module hide points3 circle myBtn">
+                Module C
+              </div>
+              <div class="grade-box grade-box-content">
+                <span class="close">&times;</span>
+                <form>
+                  <p id="moduleCFinal3P">
+                    This is Module C for 3 pointers
+                    <input
+                      type="number"
+                      id="moduleCHagasha303P"
+                      placeholder="Enter your Hagasha Grade or estimation of it."
+                      name="moduleCFinal"
+                    />
+                    <input
+                      type="number"
+                      id="moduleCBagrut703P"
+                      placeholder="Enter your Bagrut Grade or estimation of it."
+                      name="moduleCFinal"
+                    />
+                    <button type="button" id="moduleCCalculate3P" class="cal">
+                      Calculate
+                    </button>
+                  </p>
+                  <button type="button" id="btn-next-C3" class="next hide">
+                    Next
+                  </button>
+                  <button type="button" id="btn-edit-C3" class="edit hide">
+                    Edit
+                  </button>
+                </form>
+              </div>
+
+              <div id="module-b" class="module hide points3 circle myBtn">
+                Module B Literature
+              </div>
+              <div class="grade-box grade-box-content">
+                <span class="close">&times;</span>
+                <form action="/action_page.php">
+                  <p id="moduleBFinal">
+                    Time for literature! This grade is 100% internal.
+                    <label class="pieces50" for="literature pieces"
+                      >Your Literature Pieces:</label
+                    >
+                    <input
+                      type="number"
+                      placeholder="Enter your short story grade"
+                      id="shortStoryGrade13P"
+                      class="literaryPiece3P"
+                      name="litFinal"
+                    />
+                    <input
+                      type="number"
+                      placeholder="Enter your short story grade"
+                      id="shortStoryGrade23P"
+                      class="literaryPiece3P"
+                      name="litFinal"
+                    />
+                    <input
+                      type="number"
+                      id="poemGrade13P"
+                      class="literaryPiece3P"
+                      placeholder="Enter your poem grade"
+                      name="litFinal"
+                    />
+                    <label class="summative30" for="summative assessment"
+                      >Your Literature Test:</label
+                    >
+                    <input
+                      type="number"
+                      placeholder="Enter your literature test grade"
+                      id="litTest3P"
+                      class="litTest3P"
+                      name="litFinal"
+                    />
+                    
+                    <label class="reading20" for="extensive reading"
+                      >Your Book Reports:</label
+                    >
+                    <input
+                      type="number"
+                      placeholder="Enter your book report grade #1 "
+                      id="bookGrade13P"
+                      class="book3P"
+                      name="litFinal"
+                    /><input
+                      type="number"
+                      placeholder="Enter your book report grade #2"
+                      id="bookGrade23P"
+                      class="book3P"
+                      name="litFinal"
+                    />
+                    <button type="button" id="moduleBCalculate" class="cal">
+                      Calculate
+                    </button>
+                  </p>
+                  <button type="button" id="btn-next-B" class="next hide">
+                    Next
+                  </button>
+                  <button type="button" id="btn-edit-B" class="edit hide">
+                    Edit
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- 4 pointers -->
+            <div id="four-pointers">
+              <div
+                id="module-e4P"
+                class="module hide points4 circle myBtn active-circle"
+              >
+                Module E
+              </div>
+              <div class="grade-box grade-box-content">
+                <span class="close">&times;</span>
+                <form action="/action_page.php">
+                  <p id="moduleEFinal4P">
+                    Module E for 4 pointers
+                    <input
+                      type="number"
+                      id="moduleEHagasha304P"
+                      placeholder="Enter your Hagasha Grade or estimation of it."
+                      name="moduleFinal"
+                    />
+                    <input
+                      type="number"
+                      id="moduleEBagrut704P"
+                      placeholder="Enter your Bagrut Grade or estimation of it."
+                      name="moduleFinal"
+                    />
+                    <button type="button" id="moduleECalculate4P" class="cal">
+                      Calculate
+                    </button>
+                  </p>
+                  <button type="button" id="btn-next-E4" class="next hide">
+                    Next
+                  </button>
+                  <button type="button" id="btn-edit-E4" class="edit hide">
+                    Edit
+                  </button>
+                </form>
+              </div>
+
+              <div id="cobe4P" class="module hide points4 circle myBtn">
+                Oral Bagrut COBE
+              </div>
+              <div class="grade-box grade-box-content">
+                <span class="close">&times;</span>
+                <form action="/action_page.php">
+                  <p id="cobeFinal4P">
+                    This is your computerized oral bagrut
+                    <input
+                      type="number"
+                      id="cobeHagasha304P"
+                      placeholder="Enter your Hagasha Grade or estimation of it."
+                      name="cobeFinal"
+                    />
+                    <input
+                      type="number"
+                      id="cobeBagrut704P"
+                      placeholder="Enter your Bagrut Grade or estimation of it."
+                      name="cobeFinal"
+                    />
+                    <button type="button" id="cobeCalculate4P" class="cal">
+                      Calculate
+                    </button>
+                  </p>
+                  <button type="button" id="btn-next-COBE4" class="next hide">
+                    Next
+                  </button>
+                  <button type="button" id="btn-edit-COBE4" class="edit hide">
+                    Edit
+                  </button>
+                </form>
+              </div>
+
+              <div id="points-4" class="module hide points4">4 points</div>
+
+              <div id="module-c" class="module hide points4 circle myBtn">
+                Module C
+              </div>
+              <div class="grade-box grade-box-content">
+                <span class="close">&times;</span>
+                <form>
+                  <p id="moduleCFinal">
+                    This is Module C
+                    <input
+                      type="number"
+                      id="moduleCHagasha30"
+                      placeholder="Enter your Hagasha Grade or estimation of it."
+                      name="moduleCFinal"
+                    />
+                    <input
+                      type="number"
+                      id="moduleCBagrut70"
+                      placeholder="Enter your Bagrut Grade or estimation of it."
+                      name="moduleCFinal"
+                    />
+                    <button type="button" id="moduleCCalculate" class="cal">
+                      Calculate
+                    </button>
+                  </p>
+                  <button type="button" id="btn-next-C4" class="next hide">
+                    Next
+                  </button>
+                  <button type="button" id="btn-edit-C4" class="edit hide">
+                    Edit
+                  </button>
+                </form>
+              </div>
+
+              <div id="module-d" class="module hide points4 circle myBtn">
+                Module D Literature
+              </div>
+              <div class="grade-box grade-box-content">
+                <span class="close">&times;</span>
+                <form action="/action_page.php">
+                  <p id="moduleDFinal">
+                    Time for literature! This grade is 100% internal.
+                    <label class="pieces40" for="literature pieces"
+                      >Your Literature Pieces:</label
+                    >
+                    <input
+                      type="number"
+                      placeholder="Enter your short story grade"
+                      id="shortStoryGrade14P"
+                      class="literaryPiece4P"
+                      name="litFinal"
+                    />
+                    <input
+                      type="number"
+                      placeholder="Enter your short story grade"
+                      id="shortStoryGrade24P"
+                      class="literaryPiece4P"
+                      name="litFinal"
+                    />
+                    <input
+                      type="number"
+                      placeholder="Enter your short story grade"
+                      id="shortStoryGrade34P"
+                      class="literaryPiece4P"
+                      name="litFinal"
+                    />
+                    <input
+                      type="number"
+                      id="poemGrade14P"
+                      class="literaryPiece4P"
+                      placeholder="Enter your poem grade"
+                      name="litFinal"
+                    />
+                    <input
+                      type="number"
+                      id="poemGrade24P"
+                      class="literaryPiece4P"
+                      placeholder="Enter your poem grade"
+                      name="litFinal"
+                    /><br />
+                    <input
+                      type="number"
+                      id="poemGrade34P"
+                      class="literaryPiece4P"
+                      placeholder="Enter your poem grade"
+                      name="litFinal"
+                    /><br /><br />
+                    <label class="summative40" for="summative assessments"
+                      >Your Literature Tests:</label
+                    ><br />
+                    <input
+                      type="number"
+                      placeholder="Enter your literature test grade #1"
+                      id="litTest14P"
+                      class="litTest4P"
+                      name="litFinal"
+                    /><br />
+                    <input
+                      type="number"
+                      placeholder="Enter your literature test grade #2"
+                      id="litTest24P"
+                      class="litTest4P"
+                      name="litFinal"
+                    /><br /><br />
+                    <label class="reading20" for="extensive reading"
+                      >Your Book Reports:</label
+                    ><br />
+                    <input
+                      type="number"
+                      placeholder="Enter your book report grade #1 "
+                      id="bookGrade14P"
+                      class="book4P"
+                      name="litFinal"
+                    /><br /><input
+                      type="number"
+                      placeholder="Enter your book report grade #2"
+                      id="bookGrade24P"
+                      class="book4P"
+                      name="litFinal"
+                    /><br /><input
+                      type="number"
+                      placeholder="Enter your book report grade #3 "
+                      id="bookGrade34P"
+                      class="book4P"
+                      name="litFinal"
+                    /><br /><input
+                      type="number"
+                      placeholder="Enter your book report grade #4 "
+                      id="bookGrade44P"
+                      class="book 4P"
+                      name="litFinal"
+                    /><br />
+                    <button type="button" id="moduleDCalculate" class="cal">
+                      Calculate
+                    </button>
+                  </p>
+                  <button type="button" id="btn-next-D" class="next hide">
+                    Next
+                  </button>
+                  <button type="button" id="btn-edit-D" class="edit hide">
+                    Edit
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- 5 pointers Section -->
+            <div id="five-pointers">
+              <div
+                id="module-e"
+                class="module hide points5 myBtn circle active-circle"
+              >
+                Module E
+              </div>
+              <div class="grade-box grade-box-content">
+                <span class="close">&times;</span>
+                <form action="/action_page.php">
+                  <p id="moduleEFinal">
+                    Module E for 5 pointers<br /><br />
+                    <input
+                      type="number"
+                      id="moduleEHagasha30"
+                      placeholder="Enter your Hagasha Grade or estimation of it."
+                      name="moduleFinal"
+                    /><br />
+                    <input
+                      type="number"
+                      id="moduleEBagrut70"
+                      placeholder="Enter your Bagrut Grade or estimation of it."
+                      name="moduleFinal"
+                    /><br />
+                    <button
+                      type="submit"
+                      id="moduleECalculate"
+                      class="cal cal5"
+                    >
+                      Calculate
+                      </button>
+                  </p>
+                  <button
+                  type="button" id="btn-next-E5" class="next hide">
+                    Next
+                  </button>
+                  <button type="button" id="btn-edit-E5" class="edit hide">
+                    Edit
+                </form>
+              </div>
+
+              <div id="cobe" class="module hide points5 circle myBtn">
+                Oral Bagrut COBE
+              </div>
+              <div class="grade-box grade-box-content">
+                <span class="close">&times;</span>
+                <form action="/action_page.php">
+                  <p id="cobeFinal">
+                    This is your computerized oral bagrut<br /><br />
+                    <input
+                      type="number"
+                      id="cobeHagasha30"
+                      placeholder="Enter your Hagasha Grade or estimation of it."
+                      name="cobeFinal"
+                    /><br />
+                    <input
+                      type="number"
+                      id="cobeBagrut70"
+                      placeholder="Enter your Bagrut Grade or estimation of it."
+                      name="cobeFinal"
+                    /><br />
+                    <button type="submit" id="cobeCalculate" class="cal cal5">
+                      Calculate
+                    </button>
+                  </p>
+                  <button type="button" id="btn-next-COBE5" class="next hide">
+                    Next
+                  </button>
+                  <button type="button" id="btn-edit-COBE5" class="edit hide">
+                    Edit
+                </form>
+              </div>
+
+              <div id="points-5" class="module hide points5">5 points</div>
+
+              <div id="module-g" class="module hide points5 circle myBtn">
+                Module G
+              </div>
+              <div class="grade-box grade-box-content">
+                <span class="close">&times;</span>
+                <form action="/action_page.php">
+                  <p id="moduleGFinal">
+                    The highest level for bagrut in English is Module G<br /><br />
+                    <input
+                      type="number"
+                      id="moduleGHagasha30"
+                      placeholder="Enter your Hagasha Grade or estimation of it."
+                      name="moduleGFinal"
+                    /><br />
+                    <input
+                      type="number"
+                      id="moduleGBagrut70"
+                      placeholder="Enter your Bagrut Grade or estimation of it."
+                      name="moduleGFinal"
+                    /><br />
+                    <button
+                      type="submit"
+                      id="moduleGCalculate"
+                      class="cal cal5"
+                    >
+                      Calculate
+                    </button>
+                    
+                  </p>
+                  <button type="button" id="btn-next-G" class="next hide">
+                    Next
+                  </button>
+                  <button type="button" id="btn-edit-G" class="edit hide">
+                    Edit
+                </form>
+              </div>
+
+              <div id="module-f" class="module hide circle points5 myBtn">
+                Module F Literature
+              </div>
+              <div class="grade-box grade-box-content">
+                <span class="close">&times;</span>
+                <form action="/action_page.php">
+                  <p id="moduleFFinal">
+                    Time for literature! This grade is 100% internal.<br /><br />
+                    <label class="pieces40" for="literature pieces"
+                      >Your Literature Pieces:</label
+                    ><br />
+                    <input
+                      type="number"
+                      id="novelGrade"
+                      class="literaryPiece5P"
+                      placeholder="Enter your novel/play grade"
+                      name="litFinal"
+                    /><br />
+                    <input
+                      type="number"
+                      placeholder="Enter your short story grade"
+                      id="shortStoryGrade1"
+                      class="literaryPiece5P"
+                      name="litFinal"
+                    /><br />
+                    <input
+                      type="number"
+                      placeholder="Enter your short story grade"
+                      id="shortStoryGrade2"
+                      class="literaryPiece5P"
+                      name="litFinal"
+                    /><br />
+                    <input
+                      type="number"
+                      placeholder="Enter your short story grade"
+                      id="shortStoryGrade3"
+                      class="literaryPiece5P"
+                      name="litFinal"
+                    /><br />
+                    <input
+                      type="number"
+                      id="poemGrade1"
+                      class="literaryPiece5P"
+                      placeholder="Enter your poem grade"
+                      name="litFinal"
+                    /><br />
+                    <input
+                      type="number"
+                      id="poemGrade2"
+                      class="literaryPiece5P"
+                      placeholder="Enter your poem grade"
+                      name="litFinal"
+                    /><br /><br />
+                    <label class="summative40" for="summative assessments"
+                      >Your Literature Tests:</label
+                    ><br />
+                    <input
+                      type="number"
+                      placeholder="Enter your literature test grade #1"
+                      id="litTest1"
+                      class="litTest5P"
+                      name="litFinal"
+                    />
+                    <input
+                      type="number"
+                      placeholder="Enter your literature test grade #2"
+                      id="litTest2"
+                      class="litTest5P"
+                      name="litFinal"
+                    /><br /><br />
+                    <label class="reading20" for="extensive reading"
+                      >Your Book Reports:</label
+                    ><br />
+                    <input
+                      type="number"
+                      placeholder="Enter your book report grade #1 "
+                      id="bookGrade1"
+                      class="book5P"
+                      name="litFinal"
+                    /><br /><input
+                      type="number"
+                      placeholder="Enter your book report grade #2"
+                      id="bookGrade2"
+                      class="book5P"
+                      name="litFinal"
+                    /><br /><input
+                      type="number"
+                      placeholder="Enter your book report grade #3 "
+                      id="bookGrade3"
+                      class="book5P"
+                      name="litFinal"
+                    /><br /><input
+                      type="number"
+                      placeholder="Enter your book report grade #4 "
+                      id="bookGrade4"
+                      class="book5P"
+                      name="litFinal"
+                    /><br />
+                    <button
+                      type="submit"
+                      id="moduleFCalculate"
+                      class="cal cal5"
+                    >
+                      Calculate
+                    </button>
+                    
+                  </p>
+                  <button type="button" id="btn-next-F" class="next hide">
+                    Next
+                  </button>
+                  <button type="button" id="btn-edit-F" class="edit hide">
+                    Edit
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section id="grade-breakdown"></section>
       </div>
-
-      <section id="circlesSection">
-        <!-- 3 pointers section -->
-        <div id="module-a" class="module hide points3 myBtn">Module A</div>
-        <div class="grade-box grade-box-content">
-          <span class="close">&times;</span>
-          <form action="/action_page.php">
-            <p id="moduleAFinal">
-              Module A for 3 pointers<br><br>
-              <input
-                type="number"
-                id="moduleAHagasha30"
-                placeholder="Enter your Hagasha Grade or estimation of it."
-                name="moduleFinal"
-              ><br>
-              <input
-                type="number"
-                id="moduleABagrut70"
-                placeholder="Enter your Bagrut Grade or estimation of it."
-                name="moduleFinal"
-              ><br>
-              <button type="button" id="moduleACalculate" class="cal">calculate</button>
-            </p>
-          </form>
-          </div>
-
-        <div id="oral-bagrut" class="module hide points3 myBtn">Oral Bagrut</div>
-          <div class="grade-box grade-box-content">
-            <span class="close">&times;</span>
-            <form action="/action_page.php">
-            <p id="oralBagrutFinal">
-              This oral bagrut grade is 100% iternal<br><br>
-              <input
-              type="number"
-              id="oralHagasha30"
-              placeholder="Enter your Hagasha Grade or estimation of it."
-              name="oralBagrutFinal"
-            > 
-            <input
-              type="number"
-              id="oralBagrut70"
-              placeholder="Enter your Bagrut Grade or estimation of it."
-              name="oralBagrutFinal"
-            ><br>
-             <button type="button" id="oralBagrutCalculate" class="cal">calculate</button>
-            </p>
-          </form>
-          </div>
-
-        <div id="points-3" class="module hide points3">3 points</div>
-
-        
-        <div id="module-b" class="module hide points3 myBtn">
-          Module B Literature
-        </div>
-        <div class="grade-box grade-box-content">
-          <span class="close">&times;</span>
-          <form action="/action_page.php">
-          <p id="moduleBFinal">
-            Time for literature! This grade is 100% internal.<br><br>
-            <label
-              class="pieces50"
-              for="literature pieces"
-              >Your Literature Pieces:</label
-            >
-            <input
-              type="number"
-              placeholder="Enter your short story grade"
-              id="shortStoryGrade13P" class="literaryPiece3P"
-              name="litFinal"
-            /><br />
-            <input
-            type="number"
-            placeholder="Enter your short story grade"
-            id="shortStoryGrade23P" class="literaryPiece3P"
-            name="litFinal"
-            /><br />
-            <input
-              type="number"
-              id="poemGrade13P" class="literaryPiece3P"
-              placeholder="Enter your poem grade"
-              name="litFinal"
-            /><br />
-            <br>   
-            <label
-            class="summative30"
-            for="summative assessment"
-            >Your Literature Test:</label
-          ><br />
-          <input
-              type="number"
-              placeholder="Enter your literature test grade"
-              id="litTest3P" class="litTest3P"
-              name="litFinal"
-            /><br />
-            <br>
-          <label class="reading20" for="extensive reading"
-              >Your Book Reports:</label
-            ><br />
-            <input
-              type="number"
-              placeholder="Enter your book report grade #1 "
-              id="bookGrade13P" class="book3P"
-              name="litFinal"
-            /><br /><input
-              type="number"
-              placeholder="Enter your book report grade #2"
-              id="bookGrade23P" class="book3P"
-              name="litFinal"
-            /><br>
-            <button type="button" id="moduleBCalculate" class="cal">calculate</button>
-          </p>
-        </form>
-        </div>
-
-        <div id="module-c3P" class="module hide points3 myBtn">Module C</div>
-        <div class="grade-box grade-box-content">
-          <span class="close">&times;</span><form>
-          <p id="moduleCFinal3P">
-            This is Module C for 3 pointers<br><br>
-            <input
-            type="number"
-            id="moduleCHagasha303P"
-            placeholder="Enter your Hagasha Grade or estimation of it."
-            name="moduleCFinal"
-          ><br>
-          <input
-            type="number"
-            id="moduleCBagrut703P"
-            placeholder="Enter your Bagrut Grade or estimation of it."
-            name="moduleCFinal"
-          ><br>
-          <button type="button" id="moduleCCalculate3P" class="cal">calculate</button>
-          </p>
-          </form>
-        </div>
-
-        <!-- 4 pointers section -->
-        <div id="module-e4P" class="module hide points4 myBtn">Module E</div>
-        <div class="grade-box grade-box-content">
-          <span class="close">&times;</span>
-          <form action="/action_page.php">
-            <p id="moduleEFinal4P">
-              Module E for 4 pointers<br><br>
-              <input
-                type="number"
-                id="moduleEHagasha304P"
-                placeholder="Enter your Hagasha Grade or estimation of it."
-                name="moduleFinal"
-              ><br>
-              <input
-                type="number"
-                id="moduleEBagrut704P"
-                placeholder="Enter your Bagrut Grade or estimation of it."
-                name="moduleFinal"
-              ><br>
-              <button type="button" id="moduleECalculate4P" class="cal">calculate</button>
-            </p>
-          </form>
-          </div>
-
-        
-          <div id="cobe4P" class="module hide points4 myBtn">Oral Bagrut COBE</div>
-          <div class="grade-box grade-box-content">
-            <span class="close">&times;</span>
-            <form action="/action_page.php">
-            <p id="cobeFinal4P">
-              This is your computerized oral bagrut<br><br> 
-            <input
-              type="number"
-              id="cobeHagasha304P"
-              placeholder="Enter your Hagasha Grade or estimation of it."
-              name="cobeFinal"
-            ><br>
-            <input
-              type="number"
-              id="cobeBagrut704P"
-              placeholder="Enter your Bagrut Grade or estimation of it."
-              name="cobeFinal"
-            ><br>
-             <button type="button" id="cobeCalculate4P" class="cal">calculate</button>
-            </p>
-          </form>
-          </div>
-
-        <div id="points-4" class="module hide points4">4 points</div>
-
-        <div id="module-d" class="module hide points4 myBtn">
-          Module D Literature
-        </div>
-        <div class="grade-box grade-box-content">
-          <span class="close">&times;</span>
-          <form action="/action_page.php">
-          <p id="moduleDFinal">
-            Time for literature! This grade is 100% internal.<br><br>
-            <label
-              class="pieces40"
-              for="literature pieces"
-              >Your Literature Pieces:</label
-            >
-            <input
-              type="number"
-              placeholder="Enter your short story grade"
-              id="shortStoryGrade14P" class="literaryPiece4P"
-              name="litFinal"
-            /><br />
-            <input
-            type="number"
-            placeholder="Enter your short story grade"
-            id="shortStoryGrade24P" class="literaryPiece4P"
-            name="litFinal"
-            /><br />
-            <input
-            type="number"
-            placeholder="Enter your short story grade"
-            id="shortStoryGrade34P" class="literaryPiece4P"
-            name="litFinal"
-            /><br />
-            <input
-              type="number"
-              id="poemGrade14P" class="literaryPiece4P"
-              placeholder="Enter your poem grade"
-              name="litFinal"
-            /><br />
-            <input
-            type="number"
-            id="poemGrade24P" class="literaryPiece4P"
-            placeholder="Enter your poem grade"
-            name="litFinal"
-            /><br />   
-            <input
-            type="number"
-            id="poemGrade34P" class="literaryPiece4P"
-            placeholder="Enter your poem grade"
-            name="litFinal"
-            /><br><br>   
-            <label
-            class="summative40"
-            for="summative assessments"
-            >Your Literature Tests:</label
-          ><br />
-          <input
-              type="number"
-              placeholder="Enter your literature test grade #1"
-              id="litTest14P" class="litTest4P"
-              name="litFinal"
-            /><br />
-            <input
-              type="number"
-              placeholder="Enter your literature test grade #2"
-              id="litTest24P" class="litTest4P"
-              name="litFinal"
-            /><br><br>
-          <label class="reading20" for="extensive reading"
-              >Your Book Reports:</label
-            ><br />
-            <input
-              type="number"
-              placeholder="Enter your book report grade #1 "
-              id="bookGrade14P" class="book4P"
-              name="litFinal"
-            /><br /><input
-              type="number"
-              placeholder="Enter your book report grade #2"
-              id="bookGrade24P" class="book4P"
-              name="litFinal"
-            /><br /><input
-              type="number"
-              placeholder="Enter your book report grade #3 "
-              id="bookGrade34P" class="book4P"
-              name="litFinal"
-            /><br /><input
-              type="number"
-              placeholder="Enter your book report grade #4 "
-              id="bookGrade44P" class="book 4P"
-              name="litFinal"
-            /><br>
-            <button type="button" id="moduleDCalculate" class="cal">calculate</button>
-          </p>
-        </form>
-        </div>
-
-        <div id="module-c" class="module hide points4 myBtn">Module C</div>
-          <div class="grade-box grade-box-content">
-            <span class="close">&times;</span><form>
-            <p id="moduleCFinal">
-              This is Module C<br><br>
-              <input
-              type="number"
-              id="moduleCHagasha30"
-              placeholder="Enter your Hagasha Grade or estimation of it."
-              name="moduleCFinal"
-            ><br>
-            <input
-              type="number"
-              id="moduleCBagrut70"
-              placeholder="Enter your Bagrut Grade or estimation of it."
-              name="moduleCFinal"
-            ><br>
-            <button type="button" id="moduleCCalculate" class="cal">calculate</button>
-            </p>
-            </form>
-          </div>
-
-        <!-- 5 pointers Section -->
-        <div id="module-e" class="module hide points5 myBtn">Module E</div>
-        <div class="grade-box grade-box-content">
-          <span class="close">&times;</span>
-          <form action="/action_page.php">
-            <p id="moduleEFinal">
-              Module E for 5 pointers<br><br>
-              <input
-                type="number"
-                id="moduleEHagasha30"
-                placeholder="Enter your Hagasha Grade or estimation of it."
-                name="moduleFinal"
-              ><br>
-              <input
-                type="number"
-                id="moduleEBagrut70"
-                placeholder="Enter your Bagrut Grade or estimation of it."
-                name="moduleFinal"
-              ><br>
-              <button type="submit" id="moduleECalculate" class="cal cal5">calculate</button>
-            </p>
-          </form>
-          </div>
-          
-
-          <div id="cobe" class="module hide points5 myBtn">Oral Bagrut COBE</div>
-          <div class="grade-box grade-box-content">
-            <span class="close">&times;</span>
-            <form action="/action_page.php">
-            <p id="cobeFinal">
-              This is your computerized oral bagrut<br><br> 
-            <input
-              type="number"
-              id="cobeHagasha30"
-              placeholder="Enter your Hagasha Grade or estimation of it."
-              name="cobeFinal"
-            ><br>
-            <input
-              type="number"
-              id="cobeBagrut70"
-              placeholder="Enter your Bagrut Grade or estimation of it."
-              name="cobeFinal"
-            ><br>
-             <button type="submit" id="cobeCalculate" class="cal cal5">calculate</button>
-            </p>
-          </form>
-          </div>
-
-          <div id="points-5" class="module hide points5">5 points</div>
-
-          <div id="module-f" class="module hide points5 myBtn">
-            Module F Literature
-          </div>
-          <div class="grade-box grade-box-content">
-            <span class="close">&times;</span>
-            <form action="/action_page.php">
-            <p id="moduleFFinal">
-              Time for literature! This grade is 100% internal.<br><br>
-              <label
-                class="pieces40"
-                for="literature pieces"
-                >Your Literature Pieces:</label
-              ><br />
-              <input
-                type="number"
-                id="novelGrade" class="literaryPiece5P"
-                placeholder="Enter your novel/play grade"
-                name="litFinal"
-              /><br />
-              <input
-                type="number"
-                placeholder="Enter your short story grade"
-                id="shortStoryGrade1" class="literaryPiece5P"
-                name="litFinal"
-              /><br />
-              <input
-              type="number"
-              placeholder="Enter your short story grade"
-              id="shortStoryGrade2" class="literaryPiece5P"
-              name="litFinal"
-              /><br />
-              <input
-              type="number"
-              placeholder="Enter your short story grade"
-              id="shortStoryGrade3" class="literaryPiece5P"
-              name="litFinal"
-              /><br />
-              <input
-                type="number"
-                id="poemGrade1" class="literaryPiece5P"
-                placeholder="Enter your poem grade"
-                name="litFinal"
-              /><br />
-              <input
-              type="number"
-              id="poemGrade2" class="literaryPiece5P"
-              placeholder="Enter your poem grade"
-              name="litFinal"
-              /><br><br>  
-              <label
-              class="summative40"
-              for="summative assessments"
-              >Your Literature Tests:</label
-            ><br />
-            <input
-                type="number"
-                placeholder="Enter your literature test grade #1"
-                id="litTest1" class="litTest5P"
-                name="litFinal"
-              />
-              <input
-                type="number"
-                placeholder="Enter your literature test grade #2"
-                id="litTest2" class="litTest5P"
-                name="litFinal"
-              /><br><br>
-            <label class="reading20" for="extensive reading"
-                >Your Book Reports:</label
-              ><br />
-              <input
-                type="number"
-                placeholder="Enter your book report grade #1 "
-                id="bookGrade1" class="book5P"
-                name="litFinal"
-              /><br /><input
-                type="number"
-                placeholder="Enter your book report grade #2"
-                id="bookGrade2" class="book5P"
-                name="litFinal"
-              /><br /><input
-                type="number"
-                placeholder="Enter your book report grade #3 "
-                id="bookGrade3" class="book5P"
-                name="litFinal"
-              /><br /><input
-                type="number"
-                placeholder="Enter your book report grade #4 "
-                id="bookGrade4" class="book5P"
-                name="litFinal"
-              /><br>
-              <button type="submit" id="moduleFCalculate" class="cal cal5">calculate</button>
-            </p>
-          </form>
-          </div>
-
-          <div id="module-g" class="module hide points5 myBtn">Module G</div>
-          <div class="grade-box grade-box-content">
-            <span class="close">&times;</span><form>
-            <p id="moduleGFinal">
-              The highest level for bagrut in English is Module G<br><br>
-              <input
-              type="number"
-              id="moduleGHagasha30"
-              placeholder="Enter your Hagasha Grade or estimation of it."
-              name="moduleGFinal"
-            ><br>
-            <input
-              type="number"
-              id="moduleGBagrut70"
-              placeholder="Enter your Bagrut Grade or estimation of it."
-              name="moduleGFinal"
-            ><br>
-            <button type="submit" id="moduleGCalculate" class="cal cal5">calculate</button>
-            </p>
-            </form>
-          </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="grade-breakdown"></section>
-
-    </div>
     </div>
     <script src="script.js"></script>
   </body>
