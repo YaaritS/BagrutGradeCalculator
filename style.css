@@ -243,7 +243,6 @@ button.active {
   width: fit-content;
   height: fit-content;
   font-size: 16px;
-  z-index: 2;
 }
 
 p {
@@ -326,8 +325,8 @@ input::placeholder {
   position: absolute;
   justify-content: center;
   align-items: center;
-  align-content: center;
-  content: '';
+  /* align-content: center;
+  content: ''; */
   width: 400px;
   height: 400px;
   background: conic-gradient(#bdbdbd 360deg, #9c27b0 360deg);
@@ -336,7 +335,7 @@ input::placeholder {
   margin-top: 40px;
   margin-left: 35px;
   padding: 15px;
-  z-index: -10;
+  z-index: -100;
 }
 
 #progress:after {
@@ -349,5 +348,5 @@ input::placeholder {
   width: 350px;
   border-radius: 50%;
   padding: 20px;
-  z-index: -100;
+  z-index: -10;
 }

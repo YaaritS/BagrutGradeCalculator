@@ -37,14 +37,14 @@
 
   #circle-progress-section {
     height: 50%;
-    margin: 0;
-    margin-left: 5%;
+    margin: 5%;
+    margin-left: 10%;
   }
 
   #three-pointers,
   #four-pointers,
   #five-pointers {
-    grid-gap: 5px;
+    grid-gap: 10px;
   }
 
   h1 {
@@ -132,8 +132,6 @@
     margin: 3%;
     height: 60%;
     width: 60%;
-    border-radius: 50%;
     padding: 17%;
-    z-index: -100;
   }
 }
