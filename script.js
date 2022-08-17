@@ -304,6 +304,7 @@ doneBtn5P.addEventListener('click', function (evt) {
   finalGrade4P.style.display = 'none';
   finalGradebtn3P.style.display = 'none';
   finalGrade3P.style.display = 'none';
+  doneBtn5P.style.display = 'none';
 });
 
 doneBtn4P.addEventListener('click', function (evt) {
@@ -314,6 +315,7 @@ doneBtn4P.addEventListener('click', function (evt) {
   finalGrade3P.style.display = 'none';
   finalGradebtn5P.style.display = 'none';
   finalGrade5P.style.display = 'none';
+  doneBtn4P.style.display = 'none';
 });
 
 doneBtn3P.addEventListener('click', function (evt) {
@@ -324,6 +326,7 @@ doneBtn3P.addEventListener('click', function (evt) {
   finalGrade4P.style.display = 'none';
   finalGradebtn5P.style.display = 'none';
   finalGrade5P.style.display = 'none';
+  doneBtn3P.style.display = 'none';
 });
 
 //To remove the irrelevant circles
@@ -369,8 +372,6 @@ for (let i = 0; i < spans.length; i++) {
 function calcGrade3070(hagasha, bagrut) {
   return hagasha * 0.3 + bagrut * 0.7;
 }
-
-/// Adding Step Progress Bar
 
 //5 Points
 
@@ -445,9 +446,9 @@ moduleFCalculate.addEventListener('click', function () {
 
 //final grade display 5 points
 finalGradebtn5P.addEventListener('click', function () {
-  finalGradebtn5P.classList.add('hide');
-  finalGrade5P.classList.add('finalGradeDesign');
-  finalGrade5P.innerText = `Your final grade is ${Math.round(
+  // finalGradebtn5P.classList.add('hide');
+  finalGradebtn5P.classList.replace('btn', 'finalGradeDesign');
+  finalGradebtn5P.innerText = `Your final grade is ${Math.round(
     calcGrade3070(moduleEHagashaGrade.value, moduleEBagrutGrade.value) * 0.27 +
       (calcAver(
         literaryPieces.map(lp => {
@@ -523,9 +524,9 @@ moduleDCalculate.addEventListener('click', function () {
 
 //final grade display 4 points
 finalGradebtn4P.addEventListener('click', function () {
-  finalGradebtn4P.classList.add('hide');
-  finalGrade4P.classList.add('finalGradeDesign');
-  finalGrade4P.innerText = `Your final grade is ${Math.round(
+  // finalGradebtn4P.classList.add('hide');
+  finalGradebtn4P.classList.replace('btn', 'finalGradeDesign');
+  finalGradebtn4P.innerText = `Your final grade is ${Math.round(
     calcGrade3070(moduleEHagashaGrade4P.value, moduleEBagrutGrade4P.value) *
       0.27 +
       (calcAver(
@@ -602,9 +603,9 @@ moduleBCalculate.addEventListener('click', function () {
 
 //final grade display 3 points
 finalGradebtn3P.addEventListener('click', function () {
-  finalGradebtn3P.classList.add('hide');
-  finalGrade3P.classList.add('finalGradeDesign');
-  finalGrade3P.innerText = `Your final grade is ${Math.round(
+  // finalGradebtn3P.classList.add('hide');
+  finalGradebtn3P.classList.replace('btn', 'finalGradeDesign');
+  finalGradebtn3P.innerText = `Your final grade is ${Math.round(
     calcGrade3070(moduleAHagashaGrade.value, moduleABagrutGrade.value) * 0.27 +
       (calcAver(
         literaryPieces3P.map(lp => {

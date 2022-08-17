@@ -1,6 +1,6 @@
 @media (max-device-width: 1200px) {
   #page-container {
-    grid-template-columns: unset;
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 50%);
     height: 100vh;
   }
@@ -9,10 +9,11 @@
     font-size: 20px;
     height: 50%;
     margin: 5%;
+    margin-bottom: 10%;
   }
 
   #btnContainer {
-    margin: 10px;
+    margin: 5px;
     display: flex;
     justify-content: space-between;
     max-width: 500px;
@@ -74,6 +75,7 @@
     /* margin-bottom: 10px; */
     max-width: 120px;
     font-size: 14px;
+    margin: 10px 5px;
   }
 
   .grade-box {
@@ -116,8 +118,8 @@
 
   .finalGradeDesign {
     padding: 10px;
-    margin: 10px auto;
-    width: 80%;
+    margin: 10px;
+    width: 90%;
   }
 
   #progress {

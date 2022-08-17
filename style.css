@@ -246,17 +246,18 @@ button.active {
 }
 
 p {
-  margin: 6px 15px;
+  margin: 10px 15px;
   padding: 5px;
 }
 
 input {
   overflow: none;
-  margin: 2px auto;
+  margin: 10px auto;
   padding: 2px;
   border-radius: 2px;
   border: none;
-  width: 100%;
+  width: fit-content;
+  display: block;
 }
 
 input::placeholder {
@@ -285,7 +286,7 @@ input::placeholder {
 .cal:hover,
 .edit:hover,
 .next:hover {
-  background-color: var(--hover-color);
+  background-color: var(--line-border-fill);
   color: var(--text-color-light);
 }
 
@@ -309,7 +310,10 @@ input::placeholder {
   text-align: center;
   padding: 15px;
   color: var(--bg-color-dark);
-  margin: 30px auto;
+  width: 60%;
+  margin: 30px;
+  font-family: inherit;
+  font-size: 20px;
 }
 
 /*Progress Circle*/
@@ -321,7 +325,7 @@ input::placeholder {
   align-content: center;
 }
 #progress {
-  display: flex;
+  display: grid;
   position: absolute;
   justify-content: center;
   align-items: center;
